@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     try:
-        URL = "https://dogapi.dog/api-docs/v2/swagger.json"
+        URL = "https://dogapi.dog/api/v2/breeds"
         response = requests.get(url = URL)
         if(response.status_code != 200):
             raise ValueError(f"Error connecting to Dog API. Check back later.")
@@ -15,5 +15,6 @@ def home():
         logging.error(f"ValueError with home: {e}")
         return render_template("errorPage.html", errorMessage = e)
     
-if __name__=="__main__":
-    app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True) 
