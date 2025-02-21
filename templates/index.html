@@ -19,8 +19,23 @@
             <p class="lead mb-4">The place where you can get various information about different dog breeds.</p>
         </div>
     </div>
-    
-    <p> {{data}}</p>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"crossorigin="anonymous"></script>
+
+    <ul>
+        {% for datum in data %}
+        <li> {{datum.name | e }}</li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+        <div class="container-fluid text-center">
+            <hr class="solid">
+            <p> By Zy'Ajah Thompson | CPSC 4125 </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -9,12 +9,11 @@ def home():
         URL = "https://dogapi.dog/api/v2/breeds"
         response = requests.get(url = URL)
         if(response.status_code != 200):
-            raise ValueError(f"Error connecting to Dog API. Check back later.")
-        return render_template("index.html", data = response.json())
+            raise ValueError(f"Error connecting to XKCD please check back later.")
+        return render_template("index.html", data = response.json()) 
     except ValueError as e:
         logging.error(f"ValueError with home: {e}")
         return render_template("errorPage.html", errorMessage = e)
-    
 
 if __name__ == "__main__":
     app.run(debug=True) 
